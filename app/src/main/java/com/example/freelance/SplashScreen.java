@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -17,10 +17,11 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+
         ImageView img=findViewById(R.id.img);
 
-
-
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.splashtransition);
+        img.startAnimation(animation);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -29,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 2000);
+        }, 5000);
 
     }
 }
