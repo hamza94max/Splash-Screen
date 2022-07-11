@@ -4,7 +4,7 @@ Splash Screen with Animation
 
 # Java 
 
-``` 
+``` java
         ImageView img = findViewById(R.id.img);
         
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.splashtransition);
@@ -24,7 +24,7 @@ Splash Screen with Animation
 
 # Kotlin
 
-```
+``` kotlin
  val animation = AnimationUtils.loadAnimation(this, R.anim.splashtransition)
 
         binding.splashImage.startAnimation(animation)
@@ -36,6 +36,23 @@ Splash Screen with Animation
         }, 1200)
 ```
 
+## Fragment
+
+``` kotlin
+
+      val animation = AnimationUtils.loadAnimation(context, R.anim.splash_transition)
+
+      binding.splashImage.startAnimation(animation)
+        val handler = Handler()
+        handler.postDelayed({
+            val action = SplashScreenFragmentDirections.actionSplashScreenFragmentToHomeFragment()
+            findNavController().navigate(action)
+        }, 2000)
+    }
+
+```
+
+
+
 Article :
-- [5 ways to implement a splash screen
- ](https://medium.com/swlh/splash-screen-in-android-8ab250e40190)
+- [5 ways to implement a splash screen](https://medium.com/swlh/splash-screen-in-android-8ab250e40190)
