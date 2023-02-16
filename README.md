@@ -1,5 +1,30 @@
 # Splash-Screen
-Splash Screen with Animation
+
+
+
+### using splash screen Api
+
+**After adding splash dependency**
+
+```kotlin
+<style name="Theme.App.Starting" parent="Theme.SplashScreen">
+   <!-- Set the splash screen background, animated icon, and animation duration. -->
+   <item name="windowSplashScreenBackground">@color/...</item>
+
+   <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
+        animated drawable. One of these is required. -->
+   <item name="windowSplashScreenAnimatedIcon">@drawable/...</item>
+   <!-- Required for animated icons -->
+   <item name="windowSplashScreenAnimationDuration">200</item>
+
+   <!-- Set the theme of the Activity that directly follows your splash screen. -->
+   <!-- Required -->
+   <item name="postSplashScreenTheme">@style/Theme.App</item>
+</style>
+```
+**and change the theme in the mainfest in application**
+
+Another Way -> Animation
 
 
 # Java 
